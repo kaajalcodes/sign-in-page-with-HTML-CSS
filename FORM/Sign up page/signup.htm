@@ -8,11 +8,46 @@
     <link rel="stylesheet" type="text/css" href="signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
 </head>
+<script>
+    function validatePassword () {
+       var pw1 = document.getElementById("pswd1").value;
+       var pw2 = document.getElementById("pswd2").value;
+
+    if(pw1 == "") {
+      document.getElementById("message1").innerHTML = "**Fill the password please!";
+      return false;
+    }
+
+    if(pw2 == "") {
+      document.getElementById("message2").innerHTML = "**Enter the password please!";
+      return false;
+    } 
+
+    if(pw1.length < 6) {
+      document.getElementById("message1").innerHTML = "**length must be atleast 6 characters";
+      return false;
+    }
+
+    if(pw1.length > 8) {
+      document.getElementById("message1").innerHTML = "**length must not exceed 8 characters";
+      return false;
+    }
+
+    if(pw1 != pw2) {
+      document.getElementById("message2").innerHTML = "**Passwords are not same! Retry with new Password";
+      return false;
+    }
+    else {
+      alert ("password created successfully");
+      document.write("form has been submitted successfully");
+    }
+ }
+</script>
 <body>
     <div class="signup-box">
         <h1> Sign Up </h1>
         <h4>It only takes a minute</h4>
-     <form>
+     <form onsubmit ="return validateForm()">
           <label> First Name </label>
           <input type="text" placeholder="">
           <label> Last Name </label>
@@ -20,9 +55,11 @@
           <label> E-mail Id </label>
           <input type="email" placeholder="">
           <label> Password </label>
-          <input type="password" placeholder="">
+          <input type="password" id = "pswd1" placeholder="" value = "" oninput="">
+          <span id = "message1" style="color:red"> </span>
           <label> Confirm Password </label>
-          <input type="password" placeholder="">
+          <input type="password" id = "pswd2" placeholder="" value = "" oninput="">
+          <span id = "message2" style="color:red"> </span>
           <input type="button" value="submit">
           <p> By clicking the Sign Up button, you agree to our <br>
           <a href="#"> Terms and Condition </a> and <a href="#"> Privacy policy </a> 
