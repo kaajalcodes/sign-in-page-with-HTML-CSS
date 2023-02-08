@@ -56,6 +56,10 @@ input[type="button"]:hover{
     background: #035a8d;
 }
 
+input[type="button"]:active{
+    transform: translateY(2px);
+}
+
 p{
     text-align: center;
     padding-top: 20px;

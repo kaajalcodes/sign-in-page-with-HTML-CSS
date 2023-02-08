@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
 </head>
 <script>
-    function validatePassword () {
+    function validatePassword() {
        var pw1 = document.getElementById("pswd1").value;
        var pw2 = document.getElementById("pswd2").value;
 
@@ -47,7 +47,7 @@
     <div class="signup-box">
         <h1> Sign Up </h1>
         <h4>It only takes a minute</h4>
-     <form onsubmit="validateForm">
+     <form onsubmit="validatePassword()">
           <label> First Name </label>
           <input type="text" placeholder="">
           <label> Last Name </label>
@@ -60,7 +60,7 @@
           <label> Confirm Password </label>
           <input type="password" id= "pswd2" placeholder="">
           <span id= "message2" style="color:red"> </span>
-          <input type="button" value="submit">
+          <input type="button" value="Submit" onclick="validatePassword()">
           <p> By clicking the Sign Up button, you agree to our <br>
           <a href="#"> Terms and Condition </a> and <a href="#"> Privacy policy </a> 
           </p>
